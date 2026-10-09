@@ -132,7 +132,7 @@ p, h1, h2, h3 { margin: 0; }
 .team { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: start; padding-top: 28px; padding-bottom: 40px; }
 .photo {
   display: grid; place-items: center; width: 140px; height: 140px; border-radius: 50%;
-  background: var(--blue-soft); color: var(--blue); font-size: 10px; margin-bottom: 28px;
+  background: var(--blue-soft); color: var(--blue); font-size: 10px; margin-bottom: 28px; object-fit: cover;
 }
 .team h3 { font-size: 21px; font-weight: 600; margin-bottom: 4px; }
 .team p { color: var(--muted); line-height: 1.65; margin: 0; }
