@@ -148,10 +148,10 @@ p, h1, h2, h3 { margin: 0; }
 .link { color: var(--blue); font-weight: 500; font-size: 15px; }
 .link:hover { text-decoration: underline; }
 
-.team { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: start; padding-top: 28px; padding-bottom: 40px; }
+.team { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; text-align: center; padding-top: 28px; padding-bottom: 40px; }
 .photo {
   display: grid; place-items: center; width: 140px; height: 140px; border-radius: 50%;
-  background: var(--blue-soft); color: var(--blue); font-size: 10px; margin-bottom: 28px; object-fit: cover;
+  background: var(--blue-soft); color: var(--blue); font-size: 10px; margin: 0 auto 28px; object-fit: cover;
 }
 .team h3 { font-size: 21px; font-weight: 600; margin-bottom: 4px; }
 .team p { color: var(--muted); line-height: 1.65; margin: 0; }
