@@ -2,11 +2,16 @@
 
 Website for A&R Systems, served at [arsystems.dev](https://arsystems.dev).
 
-This repo is connected to Cloudflare Pages: every push to `main` deploys automatically to arsystems.dev. There is no build step; the files at the repo root are served as-is.
+Cloudflare Pages deploys every push to `main` and serves the files at the repo root as-is. There is no build step on Cloudflare.
 
-- `index.html` – home page
-- `coming-soon/index.html` – placeholder for pages that aren't built yet
-- `404.html` – same as the coming soon page, shown for any unknown path
-- `styles.css`, `favicon.svg` – shared assets
+The React app source is in `frontend/`. The root `index.html`, `assets/`, and `icons/` are the production build of that app. After changing the app, rebuild and copy the build to the repo root before pushing:
 
-To preview locally: `python3 -m http.server 8000` and open http://localhost:8000.
+```bash
+cd frontend
+npm ci
+npm run build
+cd ..
+cp -R frontend/dist/. .
+```
+
+`_redirects` rewrites every route to `index.html`, so pages such as `/products` and `/about` still load on refresh.
