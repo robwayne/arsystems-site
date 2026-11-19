@@ -61,21 +61,22 @@ export const products: Product[] = [
       {
         name: "Sales",
         icon: "users",
-        summary: "Qualify leads, capture context, and keep follow-ups moving without the busywork.",
+        summary:
+          "Answers the questions that come before a booking, like prices, timing, and what to expect, and guides interested customers to book.",
         helps: [
-          "Qualify enquiries against business criteria",
-          "Capture useful context for your sales team",
-          "Prepare follow-ups and handoffs",
+          "Answer questions about your services, prices, and policies",
+          "Guide interested customers to a booking",
+          "Notify you about every new booking",
         ],
       },
       {
         name: "Appointment management",
         icon: "calendar",
-        summary: "Schedule appointments, send reminders, and handle changes automatically.",
+        summary: "Offers your open times, books appointments, and keeps your calendar in order.",
         helps: [
-          "Coordinate booking requests",
-          "Prepare appointment reminders",
-          "Handle rescheduling and changes",
+          "Offer only the times you are open",
+          "Book appointments into your calendar",
+          "See your day, week, or month, and add appointments yourself",
         ],
       },
     ],
