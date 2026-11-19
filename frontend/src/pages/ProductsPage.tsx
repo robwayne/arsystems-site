@@ -2,7 +2,7 @@ import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Icon } from "../components/Icon";
 import { useOverlays } from "../components/overlays";
-import { products, type Product } from "../data";
+import { productAliases, products, type Product } from "../data";
 
 export function ProductsPage() {
   const { hash } = useLocation();
@@ -14,7 +14,8 @@ export function ProductsPage() {
   }, []);
 
   useEffect(() => {
-    const openProduct = (slug: string) => {
+    const openProduct = (requested: string) => {
+      const slug = productAliases[requested] ?? requested;
       if (!products.some((product) => product.slug === slug)) return;
       setOpenSlug(slug);
       const frame = requestAnimationFrame(() => {
@@ -114,7 +115,6 @@ function ProductCard({
       ref={rootRef}
       className={`product-card${expanded ? " is-open" : ""}${product.enquireDirectly ? " custom-card" : ""}`}
       id={product.slug}
-      style={expanded ? { height: slotHeight } : undefined}
     >
       <div className="card card-shell">
       <div className="card-preview">
@@ -122,10 +122,23 @@ function ProductCard({
           <span className="icon-well">
             <Icon name={product.icon} />
           </span>
-          <span className="meta">{product.category}</span>
+          <span className="product-tags">
+            {product.comingSoon ? <span className="badge-soon">Coming soon</span> : null}
+            <span className="meta">{product.category}</span>
+          </span>
         </div>
         <h2>{product.name}</h2>
         <p>{product.summary}</p>
+        {product.subsections?.length ? (
+          <p className="includes">
+            <span>Includes</span>
+            {product.subsections.map((sub) => (
+              <span className="chip-pill" key={sub.name}>
+                {sub.name}
+              </span>
+            ))}
+          </p>
+        ) : null}
         <div className="io">
           <span>
             <i className="dot" />
@@ -162,6 +175,29 @@ function ProductCard({
                   <li key={item}>{item}</li>
                 ))}
               </ul>
+            </>
+          ) : null}
+          {product.subsections?.length ? (
+            <>
+              <h3 className="detail-heading">Included with {product.name}</h3>
+              <div className="subsections">
+                {product.subsections.map((sub) => (
+                  <div className="subsection" key={sub.name}>
+                    <div className="subsection-head">
+                      <span className="icon-well">
+                        <Icon name={sub.icon} />
+                      </span>
+                      <strong>{sub.name}</strong>
+                    </div>
+                    <p>{sub.summary}</p>
+                    <ul className="helps">
+                      {sub.helps.map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
             </>
           ) : null}
           <p className="detail-note">

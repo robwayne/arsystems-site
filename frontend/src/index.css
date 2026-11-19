@@ -336,9 +336,7 @@ h1 {
 .product-card .card-shell { gap: 20px; }
 .product-card.is-open { z-index: 6; }
 .product-card.is-open .card-shell {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
   width: 100%;
   height: auto;
   box-shadow: 0 16px 40px rgba(24, 43, 67, 0.18);
@@ -357,6 +355,24 @@ h1 {
 .product-card:has(.card-hit:focus-visible) .card-shell { border-color: var(--blue); }
 .card-hit:focus-visible { outline: 2px solid var(--blue); outline-offset: -2px; }
 .card-more { display: flex; flex-direction: column; gap: 16px; }
+.product-tags { display: flex; align-items: center; gap: 10px; }
+.badge-soon {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.02em;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: var(--icon);
+  color: var(--blue);
+  white-space: nowrap;
+}
+.includes { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0; color: var(--muted); font-size: 14px; }
+.chip-pill { padding: 3px 10px; border-radius: 999px; background: var(--chip); color: var(--ink-deep); font-size: 13px; }
+.subsections { display: flex; flex-direction: column; gap: 12px; }
+.subsection { background: var(--surface-2); border: 1px solid var(--line-soft); border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 10px; }
+.subsection-head { display: flex; align-items: center; gap: 12px; color: var(--ink-deep); }
+.subsection p { margin: 0; color: var(--muted); font-size: 14px; }
+.subsection .helps { gap: 8px; font-size: 14px; }
 .card-more h3 { margin: 0; }
 .custom-card { margin-top: 24px; }
 .io {

@@ -19,6 +19,21 @@ export type Product = {
   enquireDirectly?: boolean;
   href?: string;
   hrefLabel?: string;
+  comingSoon?: boolean;
+  subsections?: Subsection[];
+};
+
+export type Subsection = {
+  name: string;
+  icon: string;
+  summary: string;
+  helps: string[];
+};
+
+export const productAliases: Record<string, string> = {
+  "ai-customer-support": "sophia",
+  "ai-sales-agent": "sophia",
+  "ai-appointment-management": "sophia",
 };
 
 export const products: Product[] = [
@@ -42,6 +57,28 @@ export const products: Product[] = [
     cta: "Meet Sophia",
     href: "https://sophia.arsystems.dev",
     hrefLabel: "Visit Sophia",
+    subsections: [
+      {
+        name: "Sales",
+        icon: "users",
+        summary: "Qualify leads, capture context, and keep follow-ups moving without the busywork.",
+        helps: [
+          "Qualify enquiries against business criteria",
+          "Capture useful context for your sales team",
+          "Prepare follow-ups and handoffs",
+        ],
+      },
+      {
+        name: "Appointment management",
+        icon: "calendar",
+        summary: "Schedule appointments, send reminders, and handle changes automatically.",
+        helps: [
+          "Coordinate booking requests",
+          "Prepare appointment reminders",
+          "Handle rescheduling and changes",
+        ],
+      },
+    ],
   },
   {
     slug: "ai-email-agent",
@@ -59,40 +96,7 @@ export const products: Product[] = [
       "Route next actions to the right team",
     ],
     cta: "Explore solution",
-  },
-  {
-    slug: "ai-sales-agent",
-    name: "AI Sales Agent",
-    category: "SALES OPERATIONS",
-    icon: "users",
-    summary: "Qualify leads, capture context, and keep follow-ups moving without the busywork.",
-    detailSummary: "Qualify leads, capture context, and keep follow-ups moving without the busywork.",
-    input: "New inquiry",
-    output: "Qualified lead",
-    workflow: "New enquiry → Qualification → Sales-ready context",
-    helps: [
-      "Qualify enquiries against business criteria",
-      "Capture useful context for your sales team",
-      "Prepare follow-ups and handoffs",
-    ],
-    cta: "Explore solution",
-  },
-  {
-    slug: "ai-appointment-management",
-    name: "AI Appointment Management",
-    category: "APPOINTMENT OPERATIONS",
-    icon: "calendar",
-    summary: "Schedule appointments, send reminders, and handle changes automatically.",
-    detailSummary: "Schedule appointments, send reminders, and handle changes automatically.",
-    input: "Booking request",
-    output: "Confirmed slot",
-    workflow: "Booking request → Availability check → Confirmed appointment",
-    helps: [
-      "Coordinate booking requests",
-      "Prepare appointment reminders",
-      "Handle rescheduling and changes",
-    ],
-    cta: "Explore solution",
+    comingSoon: true,
   },
   {
     slug: "custom-ai-workflow-automation",
@@ -114,9 +118,7 @@ export const products: Product[] = [
 
 export const footerSolutions: { label: string; to: string; external?: boolean }[] = [
   { label: "Sophia", to: "https://sophia.arsystems.dev", external: true },
-  { label: "AI Email Agent", to: "/products#ai-email-agent" },
-  { label: "AI Sales Agent", to: "/products#ai-sales-agent" },
-  { label: "AI Appointment Management", to: "/products#ai-appointment-management" },
+  { label: "AI Email Agent (coming soon)", to: "/products#ai-email-agent" },
   { label: "AI Workflow Automation", to: "/products#custom-ai-workflow-automation" },
 ];
 
