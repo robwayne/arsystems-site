@@ -13,10 +13,11 @@ export function HomePage() {
     <>
       <section className="hero">
         <div className="hero-copy">
-          <h1>Put AI to work in your business.</h1>
+          <h1>Software that grows with your business.</h1>
           <p className="lede">
-            We build production-ready AI-powered systems that automate repetitive work, save your
-            team time, and reduce operating costs.
+            We build human-centered automation and business tools for small and medium-sized
+            businesses that are changing and scaling. Custom and flexible when you need it,
+            ready-made when you don’t.
           </p>
           <div className="button-row">
             <Link className="btn btn-primary" to="/products">
@@ -59,7 +60,7 @@ export function HomePage() {
             <div className="panel-head">
               <div className="panel-title">
                 <Icon name="workflow-white" />
-                <strong>AI System</strong>
+                <strong>Your System</strong>
               </div>
               <span className="live">
                 <i />
@@ -113,8 +114,8 @@ export function HomePage() {
             <h2>Products</h2>
           </div>
           <p>
-            Four existing AI products plus custom workflow automation for the work your business
-            handles every day.
+            Ready-made tools like Sophia, plus custom workflow automation for the work your
+            business handles every day.
           </p>
           <Link className="card-link" to="/products">
             View products
@@ -128,7 +129,7 @@ export function HomePage() {
             <h2>Services</h2>
           </div>
           <p>
-            MVP &amp; Rapid Prototyping, AI Agents &amp; Automation, and Websites &amp; Systems built
+            MVP &amp; Rapid Prototyping, Automation &amp; AI Agents, and Websites &amp; Systems built
             around your business needs.
           </p>
           <Link className="card-link" to="/services">

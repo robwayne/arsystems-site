@@ -54,10 +54,10 @@ export function ProductsPage() {
   return (
     <section className="page">
       <div className="page-intro">
-        <h1>Put AI to work in your business.</h1>
+        <h1>Business tools that fit how you work.</h1>
         <p className="lede">
-          From ready-to-use AI products to custom workflow automation, we help your business work
-          smarter.
+          From ready-made products like Sophia to custom workflow automation, we help growing
+          businesses work smarter, with people in control.
         </p>
       </div>
       <div className="card-grid two">
@@ -167,6 +167,12 @@ function ProductCard({
           <p className="detail-note">
             Built around your tools, business rules, and the moments that need human oversight.
           </p>
+          {product.href ? (
+            <a className="text-link" href={product.href} target="_blank" rel="noreferrer">
+              {product.hrefLabel ?? "Learn more"}
+              <Icon name="arrow-up-right" />
+            </a>
+          ) : null}
           {onEnquire ? (
             <button className="text-link" type="button" onClick={onEnquire}>
               {product.cta}

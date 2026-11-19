@@ -17,27 +17,31 @@ export type Product = {
   helps: string[];
   cta: string;
   enquireDirectly?: boolean;
+  href?: string;
+  hrefLabel?: string;
 };
 
 export const products: Product[] = [
   {
-    slug: "ai-customer-support",
-    name: "AI Customer Support",
-    category: "CUSTOMER EXPERIENCE",
+    slug: "sophia",
+    name: "Sophia",
+    category: "HUMAN-CENTERED AUTOMATION",
     icon: "message-square",
     summary:
-      "Answer routine questions using your knowledge base. Route the exceptions to your team.",
+      "Replies to your customers on WhatsApp in your own words, answers their questions, and books appointments into your calendar.",
     detailSummary:
-      "Answer routine questions using your knowledge base. Route exceptions to your team.",
-    input: "Customer question",
-    output: "Relevant answer",
-    workflow: "Customer question → Knowledge match → Answer or handoff",
+      "Replies to your customers on WhatsApp in your own words, answers their questions, and books appointments into your calendar.",
+    input: "Customer message",
+    output: "Reply or booking",
+    workflow: "Customer message → Answer in your words → Booked appointment",
     helps: [
-      "Ground responses in your business knowledge",
-      "Prepare relevant answers to recurring questions",
-      "Hand off exceptions with context attached",
+      "Answer customer questions in your own words and tone",
+      "Book appointments into the times you are open",
+      "Keep your calendar in sync while you stay in control",
     ],
-    cta: "Explore solution",
+    cta: "Meet Sophia",
+    href: "https://sophia.arsystems.dev",
+    hrefLabel: "Visit Sophia",
   },
   {
     slug: "ai-email-agent",
@@ -108,8 +112,8 @@ export const products: Product[] = [
   },
 ];
 
-export const footerSolutions = [
-  { label: "AI Customer Support", to: "/products#ai-customer-support" },
+export const footerSolutions: { label: string; to: string; external?: boolean }[] = [
+  { label: "Sophia", to: "https://sophia.arsystems.dev", external: true },
   { label: "AI Email Agent", to: "/products#ai-email-agent" },
   { label: "AI Sales Agent", to: "/products#ai-sales-agent" },
   { label: "AI Appointment Management", to: "/products#ai-appointment-management" },
@@ -131,17 +135,17 @@ export const services: Service[] = [
     name: "MVP & Rapid Prototyping",
     icon: "rocket",
     summary:
-      "Validate a new product direction quickly with a focused, practical AI-powered proof of concept.",
+      "Validate a new product direction quickly with a focused, practical proof of concept.",
     cta: "Enquire about MVP",
     briefPlaceholder: "What would you like to validate or build?",
   },
   {
     id: "agents",
-    name: "AI Agents & Automation",
+    name: "Automation & AI Agents",
     icon: "bot",
     summary:
-      "Build systems that understand, decide, and take action across customer, sales, and operational workflows.",
-    cta: "Enquire about AI Agents",
+      "Build systems that understand, decide, and take action across customer, sales, and operational workflows, with your people in control.",
+    cta: "Enquire about Automation",
     briefPlaceholder: "What would you like to validate or build?",
   },
   {
@@ -170,7 +174,7 @@ export const analysisSteps = [
   },
   {
     icon: "focus",
-    title: "AI Opportunity",
+    title: "Opportunity",
     text: "Find the highest-value starting point",
     tone: "light" as const,
   },

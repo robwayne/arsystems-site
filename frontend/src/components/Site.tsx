@@ -58,13 +58,18 @@ export function SiteLayout() {
               <span className="brand-name">A&amp;R Systems</span>
             </NavLink>
             <p>
-              AI-powered software for a more efficient business. Less repetitive work. More time for
-              what matters.
+              Human-centered automation and business software for growing businesses. Less
+              repetitive work. More time for what matters.
             </p>
           </div>
           <div className="footer-col">
             <p className="footer-label">SOLUTIONS</p>
-            {footerSolutions.map((item) => (
+            {footerSolutions.map((item) =>
+              item.external ? (
+                <a key={item.to} href={item.to} target="_blank" rel="noreferrer">
+                  {item.label}
+                </a>
+              ) : (
               <Link
                 key={item.to}
                 to={item.to}
@@ -77,7 +82,8 @@ export function SiteLayout() {
               >
                 {item.label}
               </Link>
-            ))}
+              ),
+            )}
           </div>
           <div className="footer-col">
             <p className="footer-label">COMPANY</p>

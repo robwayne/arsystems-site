@@ -26,8 +26,8 @@ export function ServicesPage() {
       <div className="page-intro">
         <h1>Software Development, Built Around Your Business.</h1>
         <p className="lede">
-          MVP &amp; Rapid Prototyping, AI Agents &amp; Automation, and Websites &amp; Systems built
-          around your business needs.
+          MVP &amp; Rapid Prototyping, Automation &amp; AI Agents, and Websites &amp; Systems built
+          around your business needs, custom or ready-made, as you grow.
         </p>
       </div>
       <div className="card-grid services-row">

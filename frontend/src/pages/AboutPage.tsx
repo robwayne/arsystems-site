@@ -12,8 +12,9 @@ export function AboutPage() {
       <div className="page-intro">
         <h1>We don’t just add AI. We build solutions that save your business time and money.</h1>
         <p className="lede">
-          The technology is the means. A more efficient business is the goal. Every system starts
-          with a practical reason to exist.
+          We make business tools for small and medium-sized businesses that are changing and
+          scaling: custom and flexible when you need it, ready-made when you don’t. The technology
+          is the means. A more efficient business is the goal.
         </p>
       </div>
       <div className="card-grid founders">
